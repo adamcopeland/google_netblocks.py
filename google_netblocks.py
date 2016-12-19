@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python2
 
 def read_ipblocklist (filename):
 
@@ -55,8 +55,9 @@ def resolve_googleipranges():
 
 
 def main():
+    import subprocess
 
-    IP_BLOCKLIST="/tmp/ip-blocking-exceptions"
+    IP_BLOCKLIST="/opt/pmx/etc/ip-blocking-exceptions"
 
     # get a list of domains included in Google's SPF records
     ipranges = resolve_googleipranges()
