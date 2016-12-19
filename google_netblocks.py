@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 def read_ipblocklist (filename):
 
@@ -68,7 +68,7 @@ def main():
     # write the results into the IP Blocklist Exceptions file
     write_ipblocklist(mergedlist, IP_BLOCKLIST)
 
-
+    subprocess.call(['/opt/pmx6/bin/pmx-share', '--publication', 'Policy_Inbound', 'sync'], shell=False)
 
 if __name__ == '__main__':
   main()
